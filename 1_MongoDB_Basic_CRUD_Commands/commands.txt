@@ -1,0 +1,81 @@
+Create (Insert Data)
+
+    To insert a single document:
+
+db.collectionName.insertOne({ key1: "value1", key2: "value2" });
+
+To insert multiple documents:
+
+db.collectionName.insertMany([
+  { key1: "value1", key2: "value2" },
+  { key1: "value3", key2: "value4" }
+]);
+
+
+
+
+Read (Query Data)
+
+    To find all documents in a collection:
+
+db.collectionName.find();
+
+To find documents with specific criteria:
+
+db.collectionName.find({ key1: "value1" });
+
+To find one document:
+
+db.collectionName.findOne({ key1: "value1" });
+
+To find with conditions and projection (select specific fields):
+
+db.collectionName.find({ key1: "value1" }, { key2: 1, key3: 1 });
+
+
+
+
+Update (Modify Data)
+
+    To update a single document:
+
+db.collectionName.updateOne(
+  { key1: "value1" }, // Filter
+  { $set: { key2: "newValue" } } // Update
+);
+
+To update multiple documents:
+
+db.collectionName.updateMany(
+  { key1: "value1" }, // Filter
+  { $set: { key2: "newValue" } } // Update
+);
+
+
+
+
+Delete (Remove Data)
+
+    To delete a single document:
+
+db.collectionName.deleteOne({ key1: "value1" });
+
+To delete multiple documents:
+
+db.collectionName.deleteMany({ key1: "value1" });
+
+
+
+Other Useful Commands
+
+    To count documents:
+
+db.collectionName.countDocuments({ key1: "value1" });
+
+To sort results:
+
+db.collectionName.find().sort({ key1: 1 }); // 1 for ascending, -1 for descending
+
+To limit results:
+
+db.collectionName.find().limit(5);
